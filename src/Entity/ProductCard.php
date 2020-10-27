@@ -38,6 +38,11 @@ class ProductCard
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=false)
+     */
+    private $popularArrivals;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -87,6 +92,18 @@ class ProductCard
     public function setImage(?\App\Entity\SonataMediaMedia $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getPopularArrivals(): ?bool
+    {
+        return $this->popularArrivals;
+    }
+
+    public function setPopularArrivals(?bool $popularArrivals): self
+    {
+        $this->popularArrivals = $popularArrivals;
 
         return $this;
     }

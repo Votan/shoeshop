@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\Form\Type\BooleanType;
 use Sonata\MediaBundle\Form\Type\MediaType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -24,6 +25,7 @@ final class ProductCardAdmin extends AbstractAdmin
       'provider' => 'sonata.media.provider.image',
       'context' => 'products',
     ]);
+    $formMapper->add('popularArrivals', BooleanType::class);
   }
 
   protected function configureDatagridFilters(DatagridMapper $datagridMapper)
