@@ -11,4 +11,14 @@
             <div>{{ product.image }}</div>
         {% endfor %}
     {% endif %}
+
+    <h2>Latest Blog</h2>
+
+    {% if blogs|length > 0 %}
+        {% for blog in blogs %}
+            <h4>{{ blog.title }}</h4>
+            <div>{{ blog.description }}</div>
+            <div>{{ blog.image }}</div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}

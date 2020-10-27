@@ -33,3 +33,8 @@ services:
         arguments: [ ~, App\Entity\ProductCard, ~ ]
         tags:
             - { name: sonata.admin, manager_type: orm, label: ProductCard }
+
+    App\Admin\BlogPostAdmin:
+        arguments: [ ~, App\Entity\BlogPost, ~ ]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: BlogPost }
