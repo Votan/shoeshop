@@ -19,32 +19,18 @@ class ProductCardRepository extends ServiceEntityRepository
         parent::__construct($registry, ProductCard::class);
     }
 
-    // /**
-    //  * @return ProductCard[] Returns an array of ProductCard objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+      * @return ProductCard[] Returns an array of ProductCard objects
+      */
+    public function findByPopularArrivalsField($value)
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
+            ->andWhere('p.popularArrivals = :val')
             ->setParameter('val', $value)
             ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults(4)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?ProductCard
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
