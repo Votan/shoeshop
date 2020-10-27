@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ProductCardRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\SonataMediaMedia;
 
 /**
  * @ORM\Entity(repositoryClass=ProductCardRepository::class)
@@ -33,9 +34,9 @@ class ProductCard
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\SonataMediaMedia", cascade={"persist", "remove"})
      */
-    private $photoFilename;
+    private $image;
 
     public function getId(): ?int
     {
@@ -78,14 +79,14 @@ class ProductCard
         return $this;
     }
 
-    public function getPhotoFilename(): ?string
+    public function getImage(): ?\App\Entity\SonataMediaMedia
     {
-        return $this->photoFilename;
+        return $this->image;
     }
 
-    public function setPhotoFilename(?string $photoFilename): self
+    public function setImage(?\App\Entity\SonataMediaMedia $image): self
     {
-        $this->photoFilename = $photoFilename;
+        $this->image = $image;
 
         return $this;
     }
